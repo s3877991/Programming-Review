@@ -41,6 +41,7 @@ def find_top3(numbers):
 
 def draw_polygons(turtle, side, color):
     """Draw polygons with turtle and color them with color"""
+    turtle.speed(5)
     turtle.fillcolor(color)
     turtle.begin_fill()
     for point in range(side + 1):
@@ -56,15 +57,17 @@ def outcome():
         numbers = input('Enter a string with a list of numbers: ')
         print('3 largest numbers in this string are:', find_top3(numbers))
     elif n == '2':
-        index = 0
         win = turtle.Screen()
         duy = turtle.Turtle()
-        color = ['red', 'yellow', 'green', 'blue']
+        index = 0
+        color = ['green', 'red', 'blue', 'yellow']
         duy.up()
         duy.goto(-400, 0)
         duy.down()
         for side in range(3, 11):
-            draw_polygons(duy, side, color[index % 4])
+            multiple_color = color * side
+            draw_polygons(duy, side, multiple_color[index])
+            index += 1
         win.exitonclick()
     elif n == '3':
         print("Program exits. Have a nice day!")

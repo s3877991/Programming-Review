@@ -18,10 +18,12 @@ color = ['red', 'yellow', 'green', 'blue']
 duy.up()
 duy.goto(-400, 0)
 duy.down()
-for index in color * 2:
-    for side in range(3, 11):
-        # noinspection PyTypeChecker
-        draw_polygons(duy, side, color)
+index = 0
+for side in range(3, 11):
+    double_color = color * side
+    draw_polygons(duy, side, double_color[index])
+    index += 1
+
 win.exitonclick()
 
 # def find_top_3(numbers):

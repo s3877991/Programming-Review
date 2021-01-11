@@ -63,8 +63,8 @@ while n == '1' or n == '2' or n == '3':         # When users choose option 1, 2 
         menu()
         n = input('Your choice: ')
     elif n == '3':
-        plain_text = "NGUYENLUUQUOCBAO"
-        key = 0
+        plain_text = "NGUYENQUANGDUY"
+        key = -5
         rmit_encrypt(plain_text, key)
         menu()
         n = input('Your choice: ')

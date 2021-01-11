@@ -24,12 +24,12 @@ def spell_check(words, dict):
 # Problem 2: Second largest.
 def second_largest(numbers):
     """From a sorted list of numbers, find the second largest one"""
-    idx = -1  # initial index
+    idx = -1                                      # initial index
     while numbers:
-        if numbers[idx] == numbers[idx - 1]:
-            idx += -1
-        elif numbers[idx] > numbers[idx - 1]:
-            return numbers[idx - 1]
+        if numbers[idx] == numbers[idx - 1]:      # if the last element is equal to previous element in a sorted number
+            idx += -1                             # list, move to that previous element to continue the process
+        elif numbers[idx] > numbers[idx - 1]:     # otherwise, that previous element is the second largest number in
+            return numbers[idx - 1]               # that list
 
 
 # Problem 3: RMIT Cipher.
@@ -37,11 +37,11 @@ def rmit_encrypt(plain_text, key):
     """From a string of plain text, encrypt them by adding or subtracting its alphabet ordinal numbers with key"""
     character_string = ""
     encrypted_text = ""
-    for index in range(26):                     # create a string by double a string with alphabet
+    for index in range(26):                       # create a character string by double a string with alphabet
         character_string = character_string + chr(ord('A') + index)
     character_string = character_string * 2
-    for character in plain_text:
-        index = character_string.find(character)
+    for character in plain_text:                  # based on character string and key, encrypt the characters in plain
+        index = character_string.find(character)  # text and record new encrypt string
         encrypted_text = encrypted_text + character_string[index + key]
     print('The encrypted text is: ', encrypted_text)
 

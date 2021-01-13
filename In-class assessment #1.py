@@ -50,7 +50,8 @@ def rmit_encrypt(plain_text, key):
     for character in plain_text:                  # based on character string and key, encrypt the characters in plain
         index = character_string.find(character)  # text and record new encrypt string
         encrypted_text = encrypted_text + character_string[index + key]
-    return encrypted_text
+        key = -key                                # the letter in character index 1, 3, 5,... will move forward by key
+    return encrypted_text                         # the letter in character index 2, 4, 6,... will move backward by key
 
 
 # MAIN PROGRAM:
@@ -71,11 +72,11 @@ while n == '1' or n == '2' or n == '3':         # When users choose option 1, 2 
         menu()
         n = input('Your choice: ')
     elif n == '3':
-        plain_text = "NGUYENQUANGDUY"
-        key = -5
+        plain_text = "ZZZZZZZZZZZZZZ"
+        key = 2
         z = rmit_encrypt(plain_text, key)
         print('The encrypted text is:', z)
         menu()
         n = input('Your choice: ')
     else:                                       # When users selects any values other than 1, 2, 3, the program exits
-        pass
+        print('Program exits. Have a nice day.')

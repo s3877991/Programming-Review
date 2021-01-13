@@ -78,5 +78,5 @@ while n == '1' or n == '2' or n == '3':         # When users choose option 1, 2 
         print('The encrypted text is:', z)
         menu()
         n = input('Your choice: ')
-    else:                                       # When users selects any values other than 1, 2, 3, the program exits
-        print('Program exits. Have a nice day.')
+else:                                       # When users selects any values other than 1, 2, 3, the program exits
+    print('Program exits. Have a nice day.')

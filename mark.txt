@@ -1,0 +1,6 @@
+s1234 Introduction to Programming 90
+s2222 Introduction to Programming 75
+s1234 Advanced Programming 85
+s5678 Advanced Debugging 60
+s2222 Advanced Problem Solving with Google Search 65
+s1234 Advanced Coding by Copy & Pasting 95

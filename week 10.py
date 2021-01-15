@@ -4,7 +4,6 @@ def create_dictionary(file_name):
     and create & return a dictionary object
     with the first column as key, and remained columned as value
     """
-    # TODO: implement this function later
     file = open(file_name, 'r')
     dict = {}
     for line in file:

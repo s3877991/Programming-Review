@@ -1,0 +1,6 @@
+Apple 100
+Banana 50
+Cake 10
+Banana 12
+Candy 55
+Apple 20

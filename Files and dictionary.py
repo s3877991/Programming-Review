@@ -1,28 +1,24 @@
 # FILE AND DICTIONARY EXERCISE:
 # Exercise 1: INVENTORY
 def read_inventory(file_name):
-    """
-    return a dictionary
-    {product_name1: quantity1, product_name2, quantity2, ...}
-    """
-    file = open(file_name, 'r')
-    dict = {}
-    for line in file:
-        product_name = line.split()
-        quantity = product_name[0]
-        value = ' '.join(product_name[1:])
-        dict[quantity] = value
-    file.close()
-    return dict
+    f = open(file_name, 'r')
+    products = {}
+    for line in f:
+        words = line.split()
+        product_name = words[0]
+        quantity = int(words[1])
+        if product_name in products:
+            products[product_name] = products[product_name] + quantity
+        else:
+            products[product_name] = quantity
+    f.close()
+    return products
 
 
 def display_inventory(products):
-    """
-    products is a dictionary object
-    {product_name1: quantity1, produc_tname2, quantity2, ...}
-    """
-    pass
+    for product_name, quantity in products.items():
+        print(product_name, "has", quantity, "items")
 
 
-my_products = read_inventory('D:\\RMIT 2020\\All Github Repositories\\Programming-Review\\inventory.txt')
-print(my_products)
+my_products = read_inventory('inventory.txt')
+display_inventory(my_products)

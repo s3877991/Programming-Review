@@ -1,0 +1,9 @@
+apple 200
+banana 200
+orange 200
+pear 200
+strawberry 100
+mango 100
+coconut 100
+cherry 100
+kiwi 100

@@ -1,28 +1,41 @@
 # FILE AND DICTIONARY EXERCISE:
 # Exercise 2: GPA
-def read_students(file_name):
-    f = open(file_name, 'r')
-    student = {}
+students = {}
+
+def gpa(marks):
+    tot = 0
+    for mark in marks:
+        tot += mark
+    decimal = tot / len(marks) - tot // len(marks)
+    if decimal >= 0.5:
+        return tot // len(marks) + 1
+    return tot // len(marks)
+
+
+def read_student_info():
+    f = open('student.txt', 'r')
     for line in f:
         words = line.split()
-        id = words[0]
-        name = words[1]
-        surname = words[2]
-        print(id, '', name, '', surname)
+        student_id = words[0]
+        student_name = ''.join(words[1:])       # nối hai phần tử trong 1 list thành một chuỗi
+        students[student_id] = (student_name, [])
     f.close()
-    return student
 
 
-def read_mark(file_name):
-    f = open(file_name, 'r')
+def read_student_mark():
+    f = open('mark.txt', 'r')
     for line in f:
         words = line.split()
-        words = line.split()
+        student_id = words[0]
         marks = int(words[-1])
+        students[student_id][1].append(marks)
     f.close()
-    return marks
 
 
-student_id = read_students('student.txt')
-student_mark = read_mark('mark.txt')
-print(student_id, student_mark)
+def display_student_mark():
+    for student_id, student_info in students.items():
+        print(student_id, student_info[0], gpa(student_info[1]))
+
+read_student_info()
+read_student_mark()
+display_student_mark()

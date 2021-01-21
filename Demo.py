@@ -86,3 +86,11 @@ def display_inventory(products):
 
 my_products = read_inventory('inventory.txt')
 display_inventory(my_products)
+
+
+res = []
+for number in range(1000, 3001):
+    string = str(number)
+    if (int(string[0]) % 2 == 0) and (int(string[1]) % 2 == 0) and (int(string[2]) % 2 == 0) and (int(string[3]) % 2 == 0):
+        res.append(string)
+print(','.join(res))

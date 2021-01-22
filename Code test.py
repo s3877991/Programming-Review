@@ -114,3 +114,21 @@
 #    return encrypted_message
 
 # print(substitution_cipher('HELLO WORLD', 'QTGABCDEFHIJKLMNOPRSUVXYZ'))
+
+
+s = input('nhập text: ')
+d={"DIGITS":0, "LETTERS":0, "PUNCTUATION":0}
+punctuation = ',.!&:;'
+for c in s:
+    if c == ' ':
+        continue
+    elif c.isdigit():
+        d["DIGITS"]+=1
+    elif c.isalpha():
+        d["LETTERS"]+=1
+    elif c in punctuation:
+        d["PUNCTUATION"]+=1
+print ("LETTERS", d["LETTERS"])
+print ("DIGITS", d["DIGITS"])
+print ("PUNCTUATION", d["PUNCTUATION"])
+

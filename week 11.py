@@ -102,10 +102,10 @@ def sentence_characters_counting(sentence):
             count["PUNCTUATION"] += 1
     print("LETTERS", count["LETTERS"])
     print("DIGITS", count["DIGITS"])
-    print("PUNCTUATION", count["PUNCTUATION"])          # LETTERS 10, DIGITS 3, PUNCTUATION 2
+    print("PUNCTUATION", count["PUNCTUATION"])
 
 
-sentence_characters_counting('hello world! 123&')
+sentence_characters_counting('hello world! 123&')               # LETTERS 10, DIGITS 3, PUNCTUATION 2
 
 
 # EXERCISE 6: CHECK THE STRENGTH OF PASSWORDS
